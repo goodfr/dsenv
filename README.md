@@ -6,7 +6,21 @@ This project aims to provide a github codespace with the required tools for data
 
 ### Cloud
 
-Either use directly the codespace or fork this repository before doing so.
+Either use directly the codespace or fork this repository before doing so. Then recreate the conda env as follow :
+
+* install VSCode's jupyter extension
+* configure conda
+
+```bash
+# init bash to work with conda
+conda init bash
+
+# recreate the required environment
+conda env create --name gm --file env.yml
+
+# activate the new environmnet
+conda activate gm
+```
 
 ### Set up locally
 
