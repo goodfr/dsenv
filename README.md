@@ -1,6 +1,6 @@
 # DS env
 
-This project aims to provide a github codespace with the required tools for data analysis and (non llm) data science with Python.
+This project aims to provide a github codespace with the required tools for data analysis and (non llm) data science with Python (this include required conda env and VSCode extension).
 
 ## Set up
 
@@ -70,12 +70,13 @@ conda create --name myenv --file spec-file.txt
 ### How to recreate the environment files
 
 * Use bash to avoid headache of writing utf-8 with powershell...
-* ⚠️ beware of the headache that `conda-env` vs `conda` could be ([doc on manage-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments)) :
+* ⚠️ beware of the headache that `conda-env` vs `conda` could be ([doc on manage-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments))
+* `spec-file.txt` is platform specific (here Windows...)
 
 ```sh
 # when starting using conda-env use it twice...
-conda env export --from-history > env.yml
-conda env create --name test_recreate --file env.yml
+conda env export --from-history > environment.yml # environment.yml and not env.yml used by Dockerfile for build
+conda env create --name test_recreate --file environment.yml
 
 # --- test without conda-env with env.yml file KO
 # conda export --from-history > env2.yml
