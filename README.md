@@ -6,25 +6,17 @@ This project aims to provide a github codespace with the required tools for data
 
 ### Cloud
 
-Either use directly the codespace or fork this repository before doing so. Then recreate the conda env as follow :
+Either use directly the codespace or fork this repository before doing so.
 
-* install VSCode's jupyter extension
-* configure conda
+Launch code space via Code > Codespaces > ${name-of-codespace}
 
-```bash
-# init bash to work with conda
-conda init bash
-
-# recreate the required environment
-conda env create --name gm --file env.yml
-
-# activate the new environmnet
-conda activate gm
-```
+![alt text](www/image.png)
 
 ### Set up locally
 
-VSCode is a great help for installing everything that is needed to work with devcontainer. One could clone this repository and follow the instruction from the VSCode's devcontainer extension.
+VSCode is a great help for installing everything that is needed to work with devcontainer. One could clone this repository and follow the instruction from the VSCode's devcontainer extension. See the troubleshooting section if wsl needs some tweeking.
+
+## Troubleshooting
 
 ### WSL
 
@@ -60,14 +52,14 @@ docker run hello-world
 One can recreate the python environment using conda with either of the command :
 
 ```bash
-# based on installation history
-conda env create --name myenv --file env.yml
+# OS independent - based on installation history
+conda env create --name myenv --file environment.yml
 
-# or for exact reproducibility
+# or for exact reproducibility (OS dependent)
 conda create --name myenv --file spec-file.txt
 ```
 
-### How to recreate the environment files
+## How to recreate the environment files
 
 * Use bash to avoid headache of writing utf-8 with powershell...
 * ⚠️ beware of the headache that `conda-env` vs `conda` could be ([doc on manage-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#building-identical-conda-environments))
